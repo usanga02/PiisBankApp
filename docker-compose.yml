@@ -1,25 +1,62 @@
-version: '3.8'
-services:
-  dev-db:
-    image: postgres:13
-    ports:
-      - 5434:5432
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123
-      POSTGRES_DB: nest
-    networks:
-      - abisolatayo
+version: "3.8"
 
-  test-db:
-    image: postgres:13
-    ports:
-      - 5435:5432
+services:
+  bank-api:
+    build:
+      context: BankAPI
+      dockerfile: Dockerfile
+    container_name: bank_api
+    restart: unless-stopped
+    command: bash -c "npx prisma migrate dev -name init && npm run start:production"
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123
-      POSTGRES_DB: nest
+      DATABASE_URL: postgres://postgres:4AAF4cv-XIMKPPE12c-izplKT51HMr_e@db:5432/bank_db
+      JWT_SECRET:
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
     networks:
-      - abisolatayo
+      - default-network
+
+  bank-ui:
+    build:
+      context: PortfolioWebsite
+      dockerfile: Dockerfile
+    container_name: bank_ui
+    restart: unless-stopped
+    command: bash -c "npm run start"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - bank-api
+    networks:
+      - default-network
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: bank_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 4AAF4cv-XIMKPPE12c-izplKT51HMr_e
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-db:/var/lib/postgresql/data
+    networks:
+      - default-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=nsikakusanga@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=1234
+    ports:
+      - "5050:80"
+
+volumes:
+  db:
+
 networks:
-  abisolatayo:
+  default-network:
+    driver: bridge

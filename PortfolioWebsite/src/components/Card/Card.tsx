@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Card.css";
-import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-import axios, { AxiosError } from 'axios';
-import { UilTimes } from "@iconscout/react-unicons";
-import { Link } from 'react-router-dom';
+// import "react-circular-progressbar/dist/styles.css";
+import axios, { AxiosError } from "axios";
 
 interface CardProps {
   param: {
@@ -21,9 +18,9 @@ const Card: React.FC<CardProps> = (props) => {
   const { param } = props;
   const Png = param.png;
   const [accountData, setAccountData] = useState<any>(null);
-  const access_token = localStorage.getItem('access_token');
-  const id = localStorage.getItem('id');
-  const selectedAccountId = localStorage.getItem('selectedAccountId');
+  const access_token = localStorage.getItem("access_token");
+  const id = localStorage.getItem("id");
+  const selectedAccountId = localStorage.getItem("selectedAccountId");
 
   useEffect(() => {
     fetchAccountData();
@@ -34,7 +31,7 @@ const Card: React.FC<CardProps> = (props) => {
       const baseURL = `http://localhost:4000/Accounts/${id}`;
       const response = await axios.get(baseURL, {
         headers: {
-          Authorization: `Bearer ${access_token}`
+          Authorization: `Bearer ${access_token}`,
         },
       });
       setAccountData(response.data);

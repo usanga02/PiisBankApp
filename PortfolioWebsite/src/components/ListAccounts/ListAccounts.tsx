@@ -9,7 +9,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import "./ListAccounts.css";
 import Sidebar from "../Siderbar/Sidebar";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 interface Transaction {
   AccountName: string;
@@ -31,7 +31,7 @@ export default function ListAccounts() {
   const [rows, setRows] = useState<Transaction[]>([]);
   const id = localStorage.getItem("id");
   const token = localStorage.getItem("token");
-  const userId = localStorage.getItem("userId");
+  // const userId = localStorage.getItem("userId");
 
   useEffect(() => {
     const fetchTransactions = async () => {
@@ -62,7 +62,10 @@ export default function ListAccounts() {
     fetchTransactions();
   }, [id, token]);
 
-  const handleAccountNumberClick = (accountId: number, accountNumber: number) => {
+  const handleAccountNumberClick = (
+    accountId: number,
+    accountNumber: number
+  ) => {
     localStorage.setItem("selectedAccountId", accountNumber.toString());
     localStorage.setItem("id", accountId.toString());
   };
@@ -117,7 +120,8 @@ export default function ListAccounts() {
                       {row.AccountName}
                     </TableCell>
                     <TableCell align="left">
-                      <Link to='/dashboard'
+                      <Link
+                        to="/dashboard"
                         onClick={() =>
                           handleAccountNumberClick(row.id, row.account_Number)
                         }
