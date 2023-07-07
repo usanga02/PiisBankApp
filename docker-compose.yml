@@ -7,10 +7,10 @@ services:
       dockerfile: Dockerfile
     container_name: bank_api
     restart: unless-stopped
-    command: bash -c "npx prisma migrate dev -name init && npm run start:production"
+    command: bash -c "npm run start:prod"
     environment:
       DATABASE_URL: postgres://postgres:4AAF4cv-XIMKPPE12c-izplKT51HMr_e@db:5432/bank_db
-      JWT_SECRET:
+      JWT_SECRET: super-secret
     ports:
       - "4000:4000"
     depends_on:
@@ -35,6 +35,7 @@ services:
   db:
     image: postgres
     restart: always
+    # command: bash -c "npx prisma migrate prod --name init"
     environment:
       POSTGRES_DB: bank_db
       POSTGRES_USER: postgres
