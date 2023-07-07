@@ -50,7 +50,7 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     environment:
-      - PGADMIN_DEFAULT_EMAIL=nsikakusanga@gmail.com
+      - PGADMIN_DEFAULT_EMAIL=postgres@gmail.com
       - PGADMIN_DEFAULT_PASSWORD=1234
     ports:
       - "5050:80"
