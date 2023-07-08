@@ -1,8 +1,8 @@
 FROM node:14 AS builder
 
 # Environment variables
-ENV DATABASE_URL=postgresql://postgres:nsikan2021@localhost:5432/comfort_bank_app?schema=public
-ENV JWT_SECRET=super-secret
+# ENV DATABASE_URL=postgresql://postgres:nsikan2021@localhost:5432/comfort_bank_app?schema=public
+# ENV JWT_SECRET=super-secret
 
 # Create app directory
 WORKDIR /app
@@ -22,7 +22,9 @@ FROM node:14
 
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package*.json ./
-COPY ./dist ./dist
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/prisma ./prisma
+# COPY ./dist ./dist
 
 EXPOSE 4000
-CMD [ "npm", "run", "start:prod" ]
+CMD [  "npm", "run", "start:migrate:prod" ]

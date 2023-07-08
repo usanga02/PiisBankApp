@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: bank_api
     restart: unless-stopped
-    command: bash -c "npm run start:prod"
+    command: bash -c "npm run start:migrate:prod"
     environment:
       DATABASE_URL: postgres://postgres:4AAF4cv-XIMKPPE12c-izplKT51HMr_e@db:5432/bank_db
       JWT_SECRET: super-secret
