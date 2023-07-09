@@ -20,7 +20,7 @@ services:
 
   bank-ui:
     build:
-      context: PortfolioWebsite
+      context: BankUI
       dockerfile: Dockerfile
     container_name: bank_ui
     restart: unless-stopped
@@ -54,6 +54,8 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=1234
     ports:
       - "5050:80"
+    networks:
+      - default-network
 
 volumes:
   db:
