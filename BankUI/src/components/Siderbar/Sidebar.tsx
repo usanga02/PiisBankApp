@@ -12,9 +12,11 @@ export default function Sidebar() {
     <div className="Sidebar">
       <div className="logo">
         <img src={Logo} alt="" />
+        <Link to ="/">
         <span>
           Nai<span>ra</span>Pay
         </span>
+        </Link>
       </div>
       <div className='menu'>
         {SidebarData.map((item, index)=> {
@@ -32,7 +34,7 @@ export default function Sidebar() {
           );
         })}
         <div className='menuItem'>
-          <Link to='/signin'><UilSignOutAlt /></Link>
+          <Link to='/'><UilSignOutAlt /></Link>
         </div>
       </div>
     </div>

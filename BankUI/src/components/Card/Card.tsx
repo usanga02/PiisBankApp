@@ -60,7 +60,7 @@ const Card: React.FC<CardProps> = (props) => {
           <Png />
           {/* Display the account balance and account number */}
           <span>{accountData?.balance}</span>
-          <span>{accountData?.account_Number}</span>
+          <span className="span">{accountData?.account_Number}</span>
         </div>
       </div>
     </>

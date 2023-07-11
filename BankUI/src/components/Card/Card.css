@@ -1,11 +1,14 @@
 .AccountNumberCard {
   width: auto;
-  height: 9 rem !important;
+  height: 8 rem !important;
   border-radius: 8px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.CompactCard {
+  height: 10rem;
 }
 
 .accountNumber {
@@ -40,7 +43,10 @@
   .CompactCard:hover {
     box-shadow: none !important;
   }
-  
+  .span {
+    /* font-size: 60px; */
+    font-weight: bold;
+  }
   /* radial bar */
   .CompactCard .radialBar {
     flex: 1 1;
@@ -49,7 +55,10 @@
     justify-content: flex-end;
     gap: 1rem;
   }
-  
+  .radialBar h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
   .CompactCard .CircularProgressbar {
     width: 4rem !important;
     overflow: visible;
@@ -70,7 +79,7 @@
   }
   
   .CompactCard .radialBar > span {
-    font-size: 17px;
+    font-size: 25px;
     font-weight: bold;
   }
   
@@ -89,7 +98,7 @@
   }
   
   .CompactCard .detail > span:nth-child(3) {
-    font-size: 12px;
+    font-size: 22px;
   }
   
 

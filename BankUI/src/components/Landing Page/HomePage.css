@@ -9,6 +9,9 @@
     justify-content: center;
     /* height: 4%; */
   }
+  .custom-icon-color {
+    color: white !important;
+  }
   .logo1 > img {
     width: 2rem;
     height: 2rem;
@@ -70,6 +73,14 @@
     margin-top: 20px;
   }
 
+  .btn-started1 {
+    border: #FF919D;
+    border-style: solid;
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: #000;
+    margin-top: 20px;
+  }
   .btn-started {
     background: #FF919D;
     padding: 10px 30px;
@@ -79,6 +90,11 @@
   }
   .btn-started:hover {
     background: #552679;
+  }
+  .btn-started1:hover {
+    background: #FF919D;
+    color: #fff;
+    border: none;
   }
   .security {
     background: #f9f3f3;
@@ -169,11 +185,12 @@
     margin-top: 50px;
     padding: 60px 60px;
   }
-  .explore h1 {
+  .explore h1, .services h1 {
     text-align: center;
     font-size: 40px;
     font-weight: bold;
     color: #552679;
+    margin-top: 30px;
   }
   .explore p {
     text-align: center;
@@ -204,10 +221,11 @@
     background: #f5a5ae;
     display: flex;
     padding: 60px 60px;
-    margin-top: 200px;
+    margin-top: 300px;
     border-radius: 50px;
     margin-left: 60px;
     margin-right: 60px;
+    
   }
 
   .contact_header {
@@ -241,7 +259,7 @@
     margin-right: 60px; */
     padding: 60px 60px 60px 60px;
     position: relative;
-    margin-top: 200px;
+    margin-top: 40px;
   }
   .appstore {
     width: 13%;
@@ -346,6 +364,78 @@
   .ttp-text{
     margin-top: 30px;
   }
+
+  .img_bounce {
+    margin-top: 50px;
+    text-align: center;
+    animation: bounce 2s infinite alternate;
+  }
+
+  .service-image{
+    display:flex;
+    width: 33%;
+    margin-top: 30px;
+  }
+  .service-text{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 20px;
+    
+  }
+  .Booking{
+    display: flex;
+    justify-content: space-between;
+    padding: 80px;
+    margin-top: 100px;
+  }
+
+  .bbc{
+    width: 30%;
+  }
+
+  .b-t{
+    font-size: 50px;
+    font-weight: bold;
+  }
+  .Booking-text{
+    margin-top: 230px;
+  }
+  .b-p{
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .box{
+    width: 50px;
+    background-color: #166a6e;
+    border-radius: 100px;
+    height: 50px;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+  }
+  .box:hover{
+      animation-play-state: paused;
+  }
+
+  @keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:rgb(0, 183, 255); left:0px; top:0px;}
+  }
+ 
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  
 
   
 

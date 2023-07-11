@@ -9,6 +9,20 @@
     font-weight: bold;
     /* margin-left: 4rem; */
 }
+.card23 {
+    display: flex;
+    gap: 20px;
+}
+.acctName {
+    color: #FF919D;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.icons-dash{
+    display: flex;
+    gap: 2rem;
+}
 
 @media screen and (max-width: 1200px) {
     .MainDash{

@@ -45,7 +45,9 @@ export default function NewAccount() {
 
       console.log(response.data);
       const id = response.data.id;
+      const accountName = response.data.AccountName
       localStorage.setItem("id", id);
+      localStorage.setItem("AccountName", accountName);
 
       navigate('/dashboard');
     } catch (error) {

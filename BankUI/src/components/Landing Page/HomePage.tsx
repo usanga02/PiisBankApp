@@ -2,6 +2,10 @@ import Logo from '../../imgs/logo.png';
 import card from '../../imgs/monzo.png';
 import daa from '../../imgs/daa.png';
 import reel from '../../imgs/reel.png';
+import spend from '../../imgs/Spend.png';
+import Wallet from '../../imgs/wallet.jpg';
+import PlainCard from '../../imgs/Plain-card.jpg';
+import free from '../../imgs/free.png';
 import shadow from '../../imgs/shadow.png'
 import padlock from '../../imgs/padlock.png';
 import lock from '../../imgs/lock.png';
@@ -25,6 +29,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Card from 'react-bootstrap/Card';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
+import React,{useEffect} from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function HomePage() {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -36,6 +45,35 @@ export default function HomePage() {
     const handleCardLeave = () => {
       setHoveredCard(null);
     };
+
+    const navigate = useNavigate();
+    const handleSignUp = () => {
+      navigate('/signup'); // Replace '/signup' with the desired URL of the new page
+    };
+    useEffect(() => {
+      AOS.init();
+    }, [])
+
+    const [currentCardIndex, setCurrentCardIndex] = useState(0);
+    const timerRef = useRef<NodeJS.Timeout | null>(null); // Update the type of timerRef
+
+    const rotateCardImages = () => {
+      setCurrentCardIndex((prevIndex) => (prevIndex + 1) % 3); 
+    };
+
+    // ...
+
+    useEffect(() => {
+      timerRef.current = setInterval(rotateCardImages, 5000);
+    
+      return () => {
+        if (timerRef.current) {
+          clearInterval(timerRef.current);
+        }
+      };
+    }, []);
+    const cardImages = [daa, reel, shadow];
+    
 
 
   return (
@@ -62,23 +100,29 @@ export default function HomePage() {
               <Nav.Link href="#action5">Contact</Nav.Link>
             </Nav>
             <Form className="d-flex align-items-center custom-container">
-              <Button variant="outline-success" className="flex-shrink-0">Sign Up</Button>
+              <button  className="btn-started flex-shrink-0" onClick={handleSignUp}>Sign Up</button>
             </Form>
           </Navbar.Collapse>
         </Container>
     </Navbar>
     <div className='about'>
                 <div className="row row-abot">
-                    <div className="row-card col-md-7">
+                    <div className="row-card col-md-7" data-aos="fade-up-right" data-aos-offset="100"
+                          data-aos-easing="ease-in-sine" data-aos-delay="500" data-aos-mirror="true">
                         <h2 className="about-header1 sm-fs-4">Banking <br/>made easy</h2>
                         <p className='row-text'>Spend, save and manage your money, all in one place. Open a full <br></br> UK bank account from your phone, for free.</p>
-                        <a href='/signup'><button className='btn-started'>
+                        <a href='/signup'><button className='btn-started1'>
                             Get Started
                         </button></a>
                     </div>
-                    <div className='img_bounce col-md-5'>
-                        <img className="bounce-image img-fluid" src={reel} alt="aboutimage"/>
-                    </div>
+                    <div className='img_bounce col-md-5' data-aos="fade-up-left" data-aos-delay="900" data-aos-easing="ease-in-sine">
+                    <img
+                      className="bounce-image img-fluid"
+                      src={cardImages[currentCardIndex]}
+                      alt="aboutimage"
+                    />
+                  </div>
+
                 </div>
     </div>
     <div className='security'>
@@ -88,7 +132,8 @@ export default function HomePage() {
                 <p className='security-p'>Monzo uses the highest levels of Internet Security, and it is secured by 256 bits SSL <br></br> security encryption to ensure that your information is completely protected from fraud.</p>
                 </div>
     </div>
-    <div className='security1'>
+    <div className='security1' data-aos="fade-up"
+                data-aos-duration="3000" data-aos-delay="500">
                 <img className="security1-img" src={padlock} alt="aboutimage"/>
                 <div className='header_security1'>
                 <h2 className="security-header1">Protect yourself from fraud</h2>
@@ -98,7 +143,8 @@ export default function HomePage() {
                 <button className='btn-started'>Protect yourself from fraud</button>
                 </div>
     </div>
-    <div className='security2'>
+    <div className='security2'data-aos="fade-up"
+     data-aos-duration="3000"  data-aos-delay="500">
                 <div className='header_security2'>
                 <h2 className="security-header1">Keep Your Money Safe</h2>
                 <p className='security-p1'>Cutting-edge technology, FSCS protection and 24/7 support if <br></br> you need us urgently. Just a few of the reasons over 7 million <br></br> customers trust us to keep their money safe.</p>
@@ -178,6 +224,16 @@ export default function HomePage() {
         {/* Add more cards here */}
       </div>
     </div>
+
+    <div className='services'>
+    <h1>Wide Range of services</h1>
+    <p className='service-text'>Our services ranges from E-wallet, Remita Payments, Flex-Account<br/></p>
+    <div className='service-image'data-aos="zoom-in" data-aos-delay="500" data-aos-easing="ease-in-out" >
+    <img src={PlainCard} className='plain-card' alt="google-logo"/>
+    <img src={free} className=''  alt="google-logo"/>
+    <img src={Wallet} className=''  alt="google-logo"/>
+    </div>
+    </div>
     <div className='contact'>
         <div className='contact_header col-md-7'>
             <h1 className='contact-header1 sm-fs-4'>We are here to help!</h1>
@@ -185,14 +241,24 @@ export default function HomePage() {
             official social media pages. <br></br>If you require further assistance, contact us via the following channels:</p>
             <br></br>
             <a href='#'><p><i className="fas fa-phone me-3 text-secondary"></i> +2348087516511</p></a>
-            <a href='mailto:email@aexample.com' className="text-reset"><p>
-            <i className="fas fa-envelope me-3 text-secondary"></i>
-            info@example.com
-          </p></a>
+            <a href='mailto:email@example.com' className="text-reset">
+              <p>
+                <i className="fas fa-envelope me-3 custom-icon-color"></i>
+                info@example.com
+              </p>
+            </a>
         </div>
         <div className='col-md-5 img_contact'>
         <img src={contact} alt="" />
         </div>
+    </div>
+    <div className='Booking'>
+    <div className="box"></div>
+      <div className='Booking-text'>
+        <h3 className='b-t'>Spend</h3>
+        <p className='b-p'>Get instant notifications the second you pay. Set budgets for <br/>things like groceries and going out, and get warnings if you’re <br/>spending too fast (if you want them).</p>
+      </div>
+      <img src={spend} alt=""  className='bbc'/>
     </div>
     <>
         <div className='footer'>
