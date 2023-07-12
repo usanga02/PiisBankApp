@@ -19,7 +19,9 @@ import { UilYenCircle } from '@iconscout/react-unicons';
 import { UilSuitcase } from '@iconscout/react-unicons';
 import { UilReceipt } from '@iconscout/react-unicons'
 import { UilBitcoin } from '@iconscout/react-unicons'
-
+import data from '../../imgs/buyData.jpg';
+import bill from '../../imgs/PayBill.jpg';
+import transfer from '../../imgs/transfer.jpg';
 
 
 const MainDash = () => {
@@ -32,40 +34,42 @@ const MainDash = () => {
       <br></br>
       <br></br>
       <div className="card23">
-      <Card style={{ width: '18rem' }}>
-      <Card.Body>
-       <div className="icons-dash">
+      <a href=""><Card style={{ width: '18rem' }}>
+      <Card.Body className="img_body">
+        <img src={data} alt="" className="card_img"/>
+        <h2>Buy Airtime & Data</h2>
+       {/* <div className="icons-dash">
        <UilWallet/>
        <UilCreditCard/>
-       </div>
+       </div> */}
       </Card.Body>
-    </Card>
-    <Card style={{ width: '18rem' }}>
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
+    </Card></a>
+    <a href=""><Card style={{ width: '18rem' }}>
+      <Card.Body className="img_body">
+      <Card.Body className="img_body">
+        <img src={bill} alt="" className="card_img"/>
+        <h2>Pay Bills</h2>
+       {/* <div className="icons-dash">
+       <UilWallet/>
+       <UilCreditCard/>
+       </div> */}
       </Card.Body>
-    </Card>
-    <Card style={{ width: '18rem' }}>
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
-    </Card>
+    </Card></a>
+    <a href=""><Card style={{ width: '18rem' }}>
+      <Card.Body className="img_body">
+      <Card.Body className="img_body">
+        <img src={transfer} alt="" className="card_img"/>
+        <h2>Transfers</h2>
+       {/* <div className="icons-dash">
+       <UilWallet/>
+       <UilCreditCard/>
+       </div> */}
+      </Card.Body>
+      </Card.Body>
+    </Card></a>
     </div>
-    <BasicTable />
+    {/* <BasicTable /> */}
     </div>
   );
 };

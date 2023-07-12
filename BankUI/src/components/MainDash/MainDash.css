@@ -12,13 +12,24 @@
 .card23 {
     display: flex;
     gap: 20px;
+    margin-top: -40px;
 }
 .acctName {
     color: #FF919D;
     font-size: 32px;
     font-weight: bold;
 }
-
+.img_body h2 {
+    font-size: 20px;
+    color: blueviolet;
+    text-align: center;
+    margin-top: 20px;
+}
+.card_img {
+    height: 80%;
+    text-align: center;
+    margin: auto;
+}
 .icons-dash{
     display: flex;
     gap: 2rem;
