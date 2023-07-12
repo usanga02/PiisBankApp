@@ -99,7 +99,7 @@ export default function SignIn() {
         </div>
         <div className='mt-8 flex justify-center items-center'>
           <p className='font-medium text-base'>Don't have an account?</p>
-          <Link to='/' className='text-violet-500 text-base font-medium ml-2' type='submit'>
+          <Link to='/SignUp' className='text-violet-500 text-base font-medium ml-2' type='submit'>
             Sign up
           </Link>
         </div>

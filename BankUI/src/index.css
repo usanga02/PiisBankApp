@@ -15,7 +15,10 @@
   --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
   --activeItem: #f799a354;
 }
-
+.gif {
+  width: 100%;
+  height: 100%;
+}
 .Appp {
   /* padding: 0.5rem 3.5rem; */
   color: var(--black);
