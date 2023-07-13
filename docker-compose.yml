@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
     command: bash -c "npm run start:migrate:prod"
     environment:
-      DATABASE_URL: postgresql://postgres:123@localhost:5434/bank_db
+      DATABASE_URL: postgres://postgres:4AAF4cv-XIMKPPE12c-izplKT51HMr_e@db:5432/bank_db
       JWT_SECRET: super-secret
     ports:
       - "4000:4000"
