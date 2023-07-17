@@ -47,4 +47,14 @@
     .MainDash{
         align-items: center;
     }
+    
 }
+
+/* @media screen and (min-width: 768px) {
+    .card23 {
+        margin-top: 150px;
+        display: block;
+        justify-content: center;
+        text-align: center;
+    }
+} */

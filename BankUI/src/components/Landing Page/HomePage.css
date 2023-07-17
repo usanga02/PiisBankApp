@@ -59,8 +59,7 @@
     justify-content: center;
     font-size: 120px;
     color: #552679;
-    line-height: 90px;
-    font-weight: 700;
+    /* line-height: 90px; */
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 900;
@@ -448,45 +447,132 @@
     }
     .about-header1 {
       text-align: left;
-      font-size: 30px;
+      font-size: 50px;
+      margin-top: 50px;
     }
     .row-card {
       display: block;
-      text-align: center;
+      text-align: left;
       margin-left: 15px;
     }
     .custom-card {
         width: calc(100% - 2rem);
       }
-   }
-  
-   @media (max-width: 768px) { 
-    .about-header1 {
-      text-align: left;
-      font-size: 30px;
-      line-height: 45px;
-      font-weight: 700;
-    }
-    .custom-card {
-        width: calc(50% - 2rem);
+      .btn-started1 {
+        text-align: left;
       }
+      .security-img {
+        width: 30%;
+      }
+      .security1-img {
+        width: 50%;
+      }
+      .security {
+        display: block;
+      }
+      .security2 {
+        display: block;
+      }
+      .security-header1 {
+        font-size: 35px;
+      }
+      .security1 {
+        display: block;
+      }
+      .explore {
+        display: none;
+      }
+      .contact {
+        display: none;
+      }
+      .Booking {
+        display: block;
+      }
+      .b-t {
+        text-align: center;
+      }
+      .b-p {
+        text-align: center;
+        font-size: 12px;
+      }
+      .bbc {
+        margin-top: 20px;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+      .footer {
+        display: none;
+      }
+      .footer-list {
+        display: none;
+      }
+      .logo-text {
+        margin-top: -220px;
+      }
+      .lower-text {
+        margin-top: -120px;
+      }
+      /* .about-header1 {
+        font-size: 48px;
+      } */
+   }
+  
+   @media (min-width: 768px) { 
+    .about-header1 {
+      text-align: left;
+      font-size: 60px;
+      line-height: 60px;
+      font-weight: 700;
+      margin-top: 30px;
+    }
+    
+    .row-card {
+      display: block;
+      text-align: left;
+    }
+    
+    .row-text {
+      font-size: 8px;
+    }
+    .footer-list {
+      display: none;
+    }
     .img_bounce {
       margin-top: 50px;
       text-align: center;
+      width: 40%;
+    }
+    .footer {
+      display: none;
+    }
+    .contact {
+      display: none;
+    }
+    .logo-text {
+      margin-top: -220px;
+    }
+    .lower-text {
+      margin-top: -120px;
+    }
+    .Booking {
+      display: block;
+    }
+    .b-t {
+      text-align: center;
+    }
+    .b-p {
+      text-align: center;
+      font-size: 12px;
+    }
+    .bbc {
+      margin-top: 40px;
+      width: 100%;
+      margin-bottom: 50px;
     }
    }
   
-   @media (max-width: 992px) { 
-    .about-header1 {
-      text-align: left;
-      font-size: 30px;
-      line-height: 45px;
-      font-weight: 700;
-    }
-    .img_bounce {
-      margin-top: 50px;
-      text-align: center;
-    }
+   @media (min-width: 992px) { 
+   
    }
   
   

@@ -8,6 +8,8 @@ const baseURL = "http://localhost:4000/auth/signup";
 type FormData = {
   email: string;
   password: string;
+  address: string;
+  phoneNumber: string;
 };
 
 export default function SignUpForm() {
@@ -26,14 +28,18 @@ export default function SignUpForm() {
 
       const access_token = response.data.access_token;
       const userId = response.data.userId;
+      const phoneNumber = data.phoneNumber;
       localStorage.setItem("userId", userId);
       localStorage.setItem("access_token", access_token);
-      navigate('/signin');
+      localStorage.setItem("phoneNumber", phoneNumber);
+      navigate('/createAccount');
 
     } catch (error) {
       const axiosError = error as AxiosError;
+      alert("Account number aleady existed")
       if (axiosError.response) {
         console.log(axiosError.response.data);
+        alert(axiosError)
       }
     }
   };
@@ -75,6 +81,50 @@ export default function SignUpForm() {
                   value: /^(?=.*[!@#$%^&]).{4,}$/,
                   message: 'Password must contain a special character',
                 },
+              })}
+            />
+          </label>
+          {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
+        </div>
+        <div className='mt-8'>
+          <label className='text-lg font-medium'>
+            Address
+            <input
+              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-gray-100 placeholder-gray-400::placeholder text-sm'
+              placeholder='Enter your password'
+              type='text'
+              {...register('address', {
+                required: 'Address is required',
+                minLength: {
+                  value: 9,
+                  message: 'Address must be at least 4 characters long',
+                },
+                // pattern: {
+                //   value: /^(?=.*[!@#$%^&]).{4,}$/,
+                //   message: 'Password must contain a special character',
+                // },
+              })}
+            />
+          </label>
+          {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
+        </div>
+        <div className='mt-8'>
+          <label className='text-lg font-medium'>
+            Phone Number
+            <input
+              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-gray-100 placeholder-gray-400::placeholder text-sm'
+              placeholder='Enter your password'
+              type='text'
+              {...register('phoneNumber', {
+                required: 'phone Number is required',
+                minLength: {
+                  value: 11,
+                  message: 'phone Number must be at least 11 characters long',
+                },
+                // pattern: {
+                //   value: /^(?=.*[!@#$%^&]).{4,}$/,
+                //   message: 'Password must contain a special character',
+                // },
               })}
             />
           </label>

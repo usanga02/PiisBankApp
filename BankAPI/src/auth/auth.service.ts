@@ -2,6 +2,7 @@ import { ForbiddenException, Injectable, NotFoundException } from "@nestjs/commo
 import { User, Transaction, Account, Prisma } from "@prisma/client";
 import { PrismaService } from "../prisma/prisma.service";
 import { AuthDto } from "./dto";
+import { AuthDto1 } from "./dto/auth1.dto";
 import * as argon from 'argon2';
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime";
 import { JwtService } from "@nestjs/jwt";
@@ -26,6 +27,8 @@ export class AuthService{
             const user = await this.prisma.user.create({
                 data: {
                     email: dto.email,
+                    phoneNumber: dto.phoneNumber,
+                    address: dto.address,
                     hash,
                 },
             });
@@ -43,7 +46,7 @@ export class AuthService{
     }
 
 
-    async login(dto: AuthDto) {
+    async login(dto: AuthDto1) {
 
         // find user by email
         const user =  await this.prisma.user.findUnique({

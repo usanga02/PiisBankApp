@@ -54,10 +54,15 @@ export default function ListAccounts() {
           )
         );
         setRows(transactionRows);
+        if (data.length > 0) {
+          const accountName = data[0].AccountName; // Access AccountName from the first transaction
+          localStorage.setItem("AccountName", accountName);
+        }
       } catch (error) {
         console.error("Error fetching transaction data:", error);
       }
     };
+    
 
     fetchTransactions();
   }, [id, token]);

@@ -29,8 +29,12 @@ export default function SignIn() {
           const userId = response.data.userId;
           localStorage.setItem("userId", userId);
           localStorage.setItem("access_token", access_token);
+          const accountName = response.data.AccountName
+          localStorage.setItem("AccountName", accountName);
+          const id = response.data.id;
+          localStorage.setItem("id", id);
           
-          navigate('/createAccount');
+          navigate('/dashboard');
     
         } catch (error) {
           const axiosError = error as AxiosError;

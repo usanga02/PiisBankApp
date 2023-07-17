@@ -21,7 +21,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />}/>
         <Route path='/transfer' element={<Transfer />}/>
         <Route path='/history' element={<History />}/>
-        <Route path='/createAccount' element={<NewAccount />}/>
+        <Route path='/createAccount' element={<CreateAccount />}/>
         <Route path='/listAccounts' element={<ListAccounts />}/>
       </Routes>
     </Router>

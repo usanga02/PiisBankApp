@@ -29,11 +29,11 @@ import img3 from "../imgs/img3.png";
       heading: "Transaction History",
       url: "/history",
     },
-    {
-      icon: UilUsersAlt,
-      heading: "New Account",
-      url: "/createAccount",
-    },
+    // {
+    //   icon: UilUsersAlt,
+    //   heading: "New Account",
+    //   url: "/createAccount",
+    // },
     {
       icon: UilUsersAlt,
       heading: "Accounts",

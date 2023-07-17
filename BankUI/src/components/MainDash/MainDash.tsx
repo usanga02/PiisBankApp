@@ -34,7 +34,8 @@ const MainDash = () => {
       <br></br>
       <br></br>
       <div className="card23">
-      <a href=""><Card style={{ width: '18rem' }}>
+      <a href="">
+        <Card style={{ width: '18rem' }}>
       <Card.Body className="img_body">
         <img src={data} alt="" className="card_img"/>
         <h2>Buy Airtime & Data</h2>
@@ -44,7 +45,8 @@ const MainDash = () => {
        </div> */}
       </Card.Body>
     </Card></a>
-    <a href=""><Card style={{ width: '18rem' }}>
+    <a href="">
+      <Card style={{ width: '18rem' }}>
       <Card.Body className="img_body">
       <Card.Body className="img_body">
         <img src={bill} alt="" className="card_img"/>
@@ -56,7 +58,8 @@ const MainDash = () => {
       </Card.Body>
       </Card.Body>
     </Card></a>
-    <a href=""><Card style={{ width: '18rem' }}>
+    <a href="">
+      <Card style={{ width: '18rem' }}>
       <Card.Body className="img_body">
       <Card.Body className="img_body">
         <img src={transfer} alt="" className="card_img"/>

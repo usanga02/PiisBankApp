@@ -37,11 +37,11 @@ services:
     restart: always
     # command: bash -c "npx prisma migrate prod --name init"
     environment:
-      POSTGRES_DB: bank_db
+      POSTGRES_DB: nest
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 4AAF4cv-XIMKPPE12c-izplKT51HMr_e
+      POSTGRES_PASSWORD: 123
     ports:
-      - "5432:5432"
+      - "5434:5432"
     volumes:
       - ./postgres-db:/var/lib/postgresql/data
     networks:

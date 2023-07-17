@@ -81,7 +81,7 @@ export default function HomePage() {
     <Navbar expand="lg" className="custom-navbar">
         <Container fluid className="custom-container">
           <Navbar.Brand href="#">
-            <div className="logo1 custom-container">
+            <div className="logo1 ">
               <img src={Logo} alt="" />
               <span>
                 Nai<span>ra</span>Pay
@@ -109,11 +109,12 @@ export default function HomePage() {
                 <div className="row row-abot">
                     <div className="row-card col-md-7" data-aos="fade-up-right" data-aos-offset="100"
                           data-aos-easing="ease-in-sine" data-aos-delay="500" data-aos-mirror="true">
-                        <h2 className="about-header1 sm-fs-4">Banking <br/>made easy</h2>
-                        <p className='row-text'>Spend, save and manage your money, all in one place. Open a full <br></br> UK bank account from your phone, for free.</p>
-                        <a href='/signup'><button className='btn-started1'>
+                        <h2 className="about-header1">Banking <br/> made easy</h2>
+                        <p className='row-text'>Spend, save and manage your money, all in one place. Open a full <br></br> Nigeria bank account from your phone, for free.</p>
+                        <a href='/signup'>
+                          <button className='btn-started1'>
                             Get Started
-                        </button></a>
+                          </button></a>
                     </div>
                     <div className='img_bounce col-md-5' data-aos="fade-up-left" data-aos-delay="900" data-aos-easing="ease-in-sine">
                     <img
@@ -147,7 +148,7 @@ export default function HomePage() {
      data-aos-duration="3000"  data-aos-delay="500">
                 <div className='header_security2'>
                 <h2 className="security-header1">Keep Your Money Safe</h2>
-                <p className='security-p1'>Cutting-edge technology, FSCS protection and 24/7 support if <br></br> you need us urgently. Just a few of the reasons over 7 million <br></br> customers trust us to keep their money safe.</p>
+                <p className='security-p1'>Cutting-edge technology, FSCS protection and 24/7 support if  you need us urgently. Just a few of the reasons over 7 million customers trust us to keep their money safe.</p>
                 <button className='btn-started'>Find out more</button>
                 </div>
                 <img className="security1-img" src={lock} alt="aboutimage"/>
@@ -155,7 +156,7 @@ export default function HomePage() {
 
     <div className="explore">
       <h1>Explore More Than Banking</h1>
-      <p>Whether it's your child's first savings account, your personal savings account, your first home or <br></br>retirement plan, we offer personal banking products and services</p>
+      <p>Whether it's your child's first savings account, your personal savings account, your first home or retirement plan, we offer personal banking products and services</p>
       <div className="cards">
         <Card
           className={`custom-card${hoveredCard === 0 ? ' zoom-out' : ''}`}
@@ -242,11 +243,11 @@ export default function HomePage() {
             <br></br>
             <a href='#'><p><i className="fas fa-phone me-3 text-secondary"></i> +2348087516511</p></a>
             <a href='mailto:email@example.com' className="text-reset">
-              <p>
-                <i className="fas fa-envelope me-3 custom-icon-color"></i>
-                info@example.com
-              </p>
-            </a>
+            <p>
+              <i className="fas fa-envelope me-3 custom-icon-color"></i>
+              info@example.com
+            </p>
+          </a>
         </div>
         <div className='col-md-5 img_contact'>
         <img src={contact} alt="" />
@@ -256,7 +257,7 @@ export default function HomePage() {
     <div className="box"></div>
       <div className='Booking-text'>
         <h3 className='b-t'>Spend</h3>
-        <p className='b-p'>Get instant notifications the second you pay. Set budgets for <br/>things like groceries and going out, and get warnings if you’re <br/>spending too fast (if you want them).</p>
+        <p className='b-p'>Get instant notifications the second you pay. Set budgets for things like groceries and going out, and get warnings if you’re spending too fast (if you want them).</p>
       </div>
       <img src={spend} alt=""  className='bbc'/>
     </div>
