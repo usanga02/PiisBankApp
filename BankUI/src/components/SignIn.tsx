@@ -8,11 +8,15 @@ const baseURL = "http://localhost:4000/auth/signin";
 type FormData = {
     email: string;
     password: string;
+    phoneNumber: string
   };
   
 
 
 export default function SignIn() {
+  
+  
+  // const formattedPhoneNumber = phoneNumber ? phoneNumber.substring(2) : '';
   const navigate = useNavigate();
     const {
         register,
@@ -25,6 +29,8 @@ export default function SignIn() {
           const response = await axios.post(baseURL, data);
           console.log(response.data);
     
+          const phoneNumber = data.phoneNumber;
+          localStorage.setItem("phoneNumber", phoneNumber);
           const access_token = response.data.access_token;
           const userId = response.data.userId;
           localStorage.setItem("userId", userId);
@@ -34,7 +40,7 @@ export default function SignIn() {
           const id = response.data.id;
           localStorage.setItem("id", id);
           
-          navigate('/dashboard');
+          navigate('/listAccounts');
     
         } catch (error) {
           const axiosError = error as AxiosError;
@@ -84,6 +90,28 @@ export default function SignIn() {
             />
           </label>
           {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
+        </div>
+        <div className='mt-8'>
+          <label className='text-lg font-medium'>
+            Phone Number
+            <input
+              className='w-full border-1 border-gray-100 rounded-xl p-3 mt-1 bg-gray-100 placeholder-gray-400::placeholder text-sm'
+              placeholder='Enter your phone number'
+              type='text'
+              {...register('phoneNumber', {
+                required: 'phone Number is required',
+                minLength: {
+                  value: 11,
+                  message: 'phone Number must be at least 11 characters long',
+                },
+                // pattern: {
+                //   value: /^(?=.*[!@#$%^&]).{4,}$/,
+                //   message: 'Password must contain a special character',
+                // },
+              })}
+            />
+          </label>
+          {errors.phoneNumber && <p className='text-red-500'>{errors.phoneNumber.message}</p>}
         </div>
         <div className='mt-8 flex justify-between items-center'>
           <div>

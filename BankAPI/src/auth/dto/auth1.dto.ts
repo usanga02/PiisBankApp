@@ -9,5 +9,7 @@ export class AuthDto1 {
     @IsNotEmpty()
     password: string;
 
-    
+    @IsString()
+    @IsNotEmpty()
+    phoneNumber: string
 }

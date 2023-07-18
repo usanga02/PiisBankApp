@@ -520,8 +520,8 @@
    @media (min-width: 768px) { 
     .about-header1 {
       text-align: left;
-      font-size: 60px;
-      line-height: 60px;
+      font-size: 120px;
+      line-height: 100px;
       font-weight: 700;
       margin-top: 30px;
     }
@@ -534,26 +534,26 @@
     .row-text {
       font-size: 8px;
     }
-    .footer-list {
+    /* .footer-list {
       display: none;
-    }
+    } */
     .img_bounce {
       margin-top: 50px;
       text-align: center;
       width: 40%;
     }
-    .footer {
+    /* .footer {
       display: none;
-    }
-    .contact {
+    } */
+    /* .contact {
       display: none;
-    }
-    .logo-text {
+    } */
+    /* .logo-text {
       margin-top: -220px;
-    }
-    .lower-text {
+    } */
+    /* .lower-text {
       margin-top: -120px;
-    }
+    } */
     .Booking {
       display: block;
     }

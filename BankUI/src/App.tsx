@@ -9,6 +9,7 @@ import CreateAccount from './components/NewAccount/CreateAccount';
 import ListAccounts from './components/ListAccounts/ListAccounts';
 import NewAccount from './components/NewAccount/NewAccount';
 import HomePage from './components/Landing Page/HomePage';
+import Dashboard2 from './components/Dashboard2/Dashboard2';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<Login />} />
         <Route path='/dashboard' element={<Dashboard />}/>
+        {/* <Route path='/dashboard1' element={<Dashboard2 />}/> */}
         <Route path='/transfer' element={<Transfer />}/>
         <Route path='/history' element={<History />}/>
         <Route path='/createAccount' element={<CreateAccount />}/>
