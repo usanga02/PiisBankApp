@@ -33,46 +33,33 @@ const MainDash = () => {
       <Cards />
       <br></br>
       <br></br>
-      <div className="card23">
-      <a href="">
-        <Card style={{ width: '18rem' }}>
-      <Card.Body className="img_body">
-        <img src={data} alt="" className="card_img"/>
-        <h2>Buy Airtime & Data</h2>
-       {/* <div className="icons-dash">
-       <UilWallet/>
-       <UilCreditCard/>
-       </div> */}
-      </Card.Body>
-    </Card></a>
-    <a href="">
-      <Card style={{ width: '18rem' }}>
-      <Card.Body className="img_body">
-      <Card.Body className="img_body">
-        <img src={bill} alt="" className="card_img"/>
-        <h2>Pay Bills</h2>
-       {/* <div className="icons-dash">
-       <UilWallet/>
-       <UilCreditCard/>
-       </div> */}
-      </Card.Body>
-      </Card.Body>
-    </Card></a>
-    <a href="">
-      <Card style={{ width: '18rem' }}>
-      <Card.Body className="img_body">
-      <Card.Body className="img_body">
-        <img src={transfer} alt="" className="card_img"/>
-        <h2>Transfers</h2>
-       {/* <div className="icons-dash">
-       <UilWallet/>
-       <UilCreditCard/>
-       </div> */}
-      </Card.Body>
-      </Card.Body>
-    </Card></a>
-    </div>
-    {/* <BasicTable /> */}
+        <div className="card23">
+        <a href="">
+          <Card style={{ width: '18rem' }}>
+          <Card.Body className="img_body">
+            <img src={data} alt="" className="card_img"/>
+            <h2>Buy Airtime & Data</h2>
+          </Card.Body>
+          </Card></a>
+        <a href="">
+          <Card style={{ width: '18rem' }}>
+          <Card.Body className="img_body">
+          <Card.Body className="img_body">
+            <img src={bill} alt="" className="card_img"/>
+            <h2>Pay Bills</h2>
+          </Card.Body>
+          </Card.Body>
+        </Card></a>
+        <a href="">
+          <Card style={{ width: '18rem' }}>
+          <Card.Body className="img_body">
+          <Card.Body className="img_body">
+            <img src={transfer} alt="" className="card_img"/>
+            <h2>Transfers</h2>
+          </Card.Body>
+          </Card.Body>
+        </Card></a>
+      </div>
     </div>
   );
 };

@@ -26,14 +26,39 @@
     margin-top: 20px;
 }
 .card_img {
-    height: 80%;
+    /* height: 80%; */
     text-align: center;
-    margin: auto;
+    /* margin: auto; */
 }
 .icons-dash{
     display: flex;
     gap: 2rem;
 }
+.card23 a {
+    width: 100%;
+    position: relative; /* To ensure the pseudo-elements are positioned correctly */
+    display: block; /* To allow the pseudo-elements to cover the whole card */
+  }
+  
+  .card23 a::before {
+    content: ""; /* Create a pseudo-element to darken the card on hover */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black overlay */
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.3s ease; /* Add a transition effect to smooth the hover */
+  }
+  
+  .card23 a:hover::before {
+    opacity: 1; /* Show the dark overlay on hover */
+  }
+  
+  .card23 a:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow on hover */
+  }
 
 @media screen and (max-width: 1200px) {
     .MainDash{
@@ -47,6 +72,11 @@
     .MainDash{
         align-items: center;
     }
+
+    .card23 {
+        flex-direction: column; 
+        margin-top: 90px; 
+      }
     
 }
 

@@ -554,10 +554,10 @@
     /* .lower-text {
       margin-top: -120px;
     } */
-    .Booking {
+    /* .Booking {
       display: block;
-    }
-    .b-t {
+    } */
+    /* .b-t {
       text-align: center;
     }
     .b-p {
@@ -568,12 +568,10 @@
       margin-top: 40px;
       width: 100%;
       margin-bottom: 50px;
-    }
+    } */
    }
   
-   @media (min-width: 992px) { 
-   
-   }
+  
   
   
   
