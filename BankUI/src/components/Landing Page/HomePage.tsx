@@ -35,6 +35,19 @@ import React,{useEffect} from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
+const BackToTopArrow = () => {
+  const handleBackToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <div className="back-to-top-arrow" onClick={handleBackToTop}>
+      <i className="fas fa-arrow-up"></i>
+    </div>
+  );
+};
+
 export default function HomePage() {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
@@ -73,6 +86,25 @@ export default function HomePage() {
       };
     }, []);
     const cardImages = [daa, reel, shadow];
+
+    useEffect(() => {
+      const handleScroll = () => {
+        const backToTopArrow = document.querySelector('.back-to-top-arrow');
+        if (backToTopArrow) {
+          if (window.scrollY >= 500) {
+            backToTopArrow.classList.add('show');
+          } else {
+            backToTopArrow.classList.remove('show');
+          }
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
     
 
 
@@ -97,7 +129,7 @@ export default function HomePage() {
             >
               <Nav.Link href="#action3">Accounts</Nav.Link>
               <Nav.Link href="#action4">Savings</Nav.Link>
-              <Nav.Link href="#action5">Contact</Nav.Link>
+              <Nav.Link href="#contact-section">Contact</Nav.Link>
             </Nav>
             <Form className="d-flex align-items-center custom-container">
               <button  className="btn-started flex-shrink-0" onClick={handleSignUp}>Sign Up</button>
@@ -235,7 +267,7 @@ export default function HomePage() {
     <img src={Wallet} className=''  alt="google-logo"/>
     </div>
     </div>
-    <div className='contact'>
+    <div className='contact' id='contact-section'>
         <div className='contact_header col-md-7'>
             <h1 className='contact-header1 sm-fs-4'>We are here to help!</h1>
             <p>Chat with us via our in-app live chat or send us a message on our
@@ -332,8 +364,9 @@ export default function HomePage() {
                  Authority. Our Financial Services Register number is 730427.</p>
             </div>
           </div>
+          <BackToTopArrow />
         </>
-    
     </div>
+     
   );
 }

@@ -417,6 +417,31 @@
   .box:hover{
       animation-play-state: paused;
   }
+  /* Existing styles... */
+
+.back-to-top-arrow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #FF919D;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.back-to-top-arrow.show {
+  opacity: 1;
+}
+
 
   @keyframes example {
     0%   {background-color:red; left:0px; top:0px;}
