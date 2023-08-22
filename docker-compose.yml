@@ -2,9 +2,10 @@ version: "3.8"
 
 services:
   bank-api:
-    build:
-      context: BankAPI
-      dockerfile: Dockerfile
+    # build:
+    #   context: BankAPI
+    #   dockerfile: Dockerfile
+    image: 399181895363.dkr.ecr.us-east-1.amazonaws.com/bankapi
     container_name: bank_api
     restart: unless-stopped
     command: bash -c "npm run start:migrate:prod"
@@ -19,9 +20,10 @@ services:
       - default-network
 
   bank-ui:
-    build:
-      context: BankUI
-      dockerfile: Dockerfile
+    # build:
+    #   context: BankUI
+    #   dockerfile: Dockerfile
+    image: 399181895363.dkr.ecr.us-east-1.amazonaws.com/bankui
     container_name: bank_ui
     restart: unless-stopped
     command: bash -c "npm run start"
